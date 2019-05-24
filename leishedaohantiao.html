@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		 * {
+      		margin: 0;
+      		padding: 0;
+		    }
+
+			.ulTag{
+				height:90px;
+				margin: 0;
+				padding-top:30px;
+				float: right;
+				color: #E4E4E4;
+			}
+			.ulTag li{
+				list-style: none;
+				float: left;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		
+	</body>
+		<div style="height: 90px;width: 100%;background: #111111;">
+			<div style="width: 920px;margin:0 auto;">
+			<img class="logo"/>
+			<ul class="ulTag"></ul>
+		</div>
+			
+		<script src="jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">			
+		$.get("new_file.json",function(data){
+			$(".logo").attr("src",data.logo)
+			$(".tupian").attr("src",data.tupian)
+			$(".tupian1").attr("src",data.tupian1)
+			$(".tupian2").attr("src",data.tupian2)
+			$(".tupian3").attr("src",data.tupian3)
+			$.each(data.navTit,function(i,v){
+				$("<li></li>").html(v).appendTo($(".ulTag"))
+			})
+		})
+		
+		</script>
+</html>
